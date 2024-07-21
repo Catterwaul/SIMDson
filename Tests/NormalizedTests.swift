@@ -10,7 +10,7 @@ struct NormalizedTests {
     test(SIMD3<Float>.self)
     test(SIMD4<Float>.self)
 
-    func test<Vector: FloatingPointSIMD>(_: Vector.Type) {
+    func test<Vector: FloatingPointVector>(_: Vector.Type) {
       let unnormalized = Vector.one
       let normalized = unnormalized.normalized
       test(wrapped: unnormalized, $projected: unnormalized)

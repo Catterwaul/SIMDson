@@ -3,7 +3,7 @@
 /// Setting `wrappedValue` contractually guarantees that you're providing a normalized vector.
 /// If you want to normalize a value that may not be normalized already, use `projectedValue` instead.
 /// `wrappedValue` will be normalized after you either set, ***or get***,  `projectedValue`.
-@propertyWrapper public struct Normalized<Vector: FloatingPointSIMD> {
+@propertyWrapper public struct Normalized<Vector: FloatingPointVector> {
   public var wrappedValue: Vector
 
   /// - Precondition: `wrappedValue` is normalized.
