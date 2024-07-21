@@ -2,6 +2,7 @@ import simd
 
 extension Double: FloatingPointScalar {
   public typealias Matrix2x2 = double2x2
+  public typealias Matrix3x2 = double3x2
   public typealias Matrix3x3 = double3x3
 
   @inlinable public static func normalize(_ vector: SIMD2<Self>) -> SIMD2<Self> {

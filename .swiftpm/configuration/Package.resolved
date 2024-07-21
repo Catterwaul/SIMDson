@@ -1,5 +1,5 @@
 {
-  "originHash" : "da0399f1c7ec3db84e0df27741bf91302ace120c4581e8f2fc7725d5654d5ee4",
+  "originHash" : "1b2c929538b422e2647beed5c51f32fcbd3f6562ece76e1149bfa41b21f38bf8",
   "pins" : [
     {
       "identity" : "swift-docc-plugin",
@@ -17,6 +17,24 @@
       "state" : {
         "revision" : "b45d1f2ed151d057b54504d653e0da5552844e34",
         "version" : "1.0.0"
+      }
+    },
+    {
+      "identity" : "thrappture",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Catterwaul/Thrappture",
+      "state" : {
+        "branch" : "main",
+        "revision" : "9fd6fb84f6f60159219885776407b16a24c0e4a6"
+      }
+    },
+    {
+      "identity" : "tuplay",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Catterwaul/Tuplay",
+      "state" : {
+        "branch" : "swift-6",
+        "revision" : "556e8f2161964295bbf954c4caebff503c84134e"
       }
     }
   ],
