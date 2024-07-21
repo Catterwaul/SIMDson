@@ -1,4 +1,6 @@
-/// An affordance for collecting free functions from `simd` into types. Probably not directly useful outside of SIMDson.
+/// An affordance for collecting free functions from `simd` into types,
+/// so that they can be used generically.
+/// Probably not directly useful outside of SIMDson.
 public protocol FloatingPointScalar: SIMDScalar & BinaryFloatingPoint & Codable & Sendable {
   // MARK: - Matrices
   associatedtype Matrix2x2: SIMDson.Matrix2x2<Self>

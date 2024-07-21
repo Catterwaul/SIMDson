@@ -25,3 +25,13 @@ extension Float: FloatingPointScalar {
     simd.cross(x, y)
   }
 }
+
+extension Float.Matrix3x2: Matrix3x2, @retroactive @unchecked Sendable {
+  public typealias Scalar = Float
+}
+extension Float.Matrix2x2: Matrix2x2, @retroactive @unchecked Sendable {
+  public typealias Scalar = Float
+}
+extension Float.Matrix3x3: Matrix3x3, @retroactive @unchecked Sendable {
+  public typealias Scalar = Float
+}

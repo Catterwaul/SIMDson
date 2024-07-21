@@ -19,8 +19,19 @@ extension Double: FloatingPointScalar {
     simd.normalize(vector)
   }
 
-  // MARK: - 
+  // MARK: -
+  
   @inlinable public static func cross(_ x: SIMD3<Self>, _ y: SIMD3<Self>) -> SIMD3<Self> {
     simd.cross(x, y)
   }
+}
+
+extension Double.Matrix2x2: Matrix2x2, @retroactive @unchecked Sendable {
+  public typealias Scalar = Double
+}
+extension Double.Matrix3x2: Matrix3x2, @retroactive @unchecked Sendable {
+  public typealias Scalar = Double
+}
+extension Double.Matrix3x3: Matrix3x3, @retroactive @unchecked Sendable {
+  public typealias Scalar = Double
 }
