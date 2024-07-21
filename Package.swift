@@ -10,12 +10,14 @@ _ = Package(
   products: [.library(name: name, targets: [name])],
   dependencies: [
     Dependency.swift(repositoryName: "docc-plugin").package,
+    Dependency.apple(repositoryName: "algorithms").package,
     Dependency.catterwaul(name: "Tuplé", repositoryName: "Tuplay", branch: "swift-6").package
   ],
   targets: [
     .target(
       name: name,
       dependencies: [
+        Dependency.apple(repositoryName: "algorithms").product,
         Dependency.catterwaul(name: "Tuplé", repositoryName: "Tuplay", branch: "swift-6").product
       ]
     ),

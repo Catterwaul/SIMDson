@@ -20,6 +20,6 @@ extension double3x2: Matrix3x2, @retroactive @unchecked Sendable { }
 public extension Matrix3x2 {
   /// Create a matrix with two basis vectors, using their cross product as the third.
   @inlinable init(_ matrix: some Matrix3x3<Scalar>) {
-    self.init(columns: map(matrix.columns)(\.[SIMD2(0, 1)]))
+    self.init(columns: map(matrix.columns)(\.[]))
   }
 }
