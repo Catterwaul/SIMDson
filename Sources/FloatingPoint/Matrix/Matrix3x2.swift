@@ -18,7 +18,7 @@ extension double3x2: Matrix3x2, @retroactive @unchecked Sendable { }
 
 // MARK: - public
 public extension Matrix3x2 {
-  /// Create a matrix with two basis vectors, using their cross product as the third.
+  /// Remove the bottom row from a 3x3 matrix.
   @inlinable init(_ matrix: some Matrix3x3<Scalar>) {
     self.init(columns: map(matrix.columns)(\.[]))
   }
