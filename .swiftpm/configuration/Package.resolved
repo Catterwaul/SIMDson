@@ -1,5 +1,5 @@
 {
-  "originHash" : "33b8c8b6c0260405dd0f450e10bbc70360b253fd822a53574c5b3261ee1f6c79",
+  "originHash" : "1f439a845bc699ce4fdd151cefae29a5f39aa70bfcb1ed3335d453def085a6c3",
   "pins" : [
     {
       "identity" : "swift-algorithms",
@@ -51,8 +51,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Catterwaul/Tuplay",
       "state" : {
-        "branch" : "swift-6",
-        "revision" : "556e8f2161964295bbf954c4caebff503c84134e"
+        "branch" : "main",
+        "revision" : "74c95c0a184d32bfee551408d2ae26a43f1269d2"
       }
     }
   ],
