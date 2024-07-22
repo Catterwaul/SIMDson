@@ -15,7 +15,7 @@ public protocol FloatingPointScalar: SIMDScalar & BinaryFloatingPoint & Codable 
   // MARK: - Matrices
   associatedtype Matrix2x2: SIMDson.Matrix2x2<Self>
 
-  /// 3 columns, 2 rows.
+  // A matrix with 3 columns and 2 rows.
   associatedtype Matrix3x2: SIMDson.Matrix3x2<Self>
 
   associatedtype Matrix3x3: SIMDson.Matrix3x3<Self>

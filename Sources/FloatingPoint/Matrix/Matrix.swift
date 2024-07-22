@@ -11,6 +11,7 @@ public protocol Matrix<Scalar>: Sendable {
   var columns: Columns { get }
 }
 
+/// A matrix with the same number of columns and rows.
 public protocol SquareMatrix: Matrix where Row == Column {
   @inlinable var inverse: Self { get }
 }

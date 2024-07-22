@@ -1,5 +1,6 @@
 // swift-tools-version: 6.0
 
+import Foundation // for String.capitalized
 import PackageDescription
 
 let name = "SIMDson"
