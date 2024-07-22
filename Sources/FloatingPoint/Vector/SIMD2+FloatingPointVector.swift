@@ -1,6 +1,6 @@
 // MARK: FloatingPointVector
 extension SIMD2: FloatingPointVector where Scalar: FloatingPointScalar {
-  @inlinable public var normalized: Self { Scalar.normalize(self) }
+  @inlinable public var normalized: Self { Scalar.VectorRequirements.normalize(self) }
 }
 
 // MARK: - public

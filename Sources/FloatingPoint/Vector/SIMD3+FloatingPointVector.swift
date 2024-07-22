@@ -1,5 +1,9 @@
 extension SIMD3: FloatingPointVector where Scalar: FloatingPointScalar {
-  @inlinable public var normalized: Self { Scalar.normalize(self) }
+  @inlinable public var normalized: Self { Scalar.VectorRequirements.normalize(self) }
+
+  @inlinable public static func cross(_ x: Self, _ y: Self) -> Self {
+    Scalar.VectorRequirements.cross(x, y)
+  }
 }
 
 // MARK: - public

@@ -1,29 +1,31 @@
 import simd
 
 extension Double: FloatingPointScalar {
+  public enum VectorRequirements: FloatingPointVectorRequirements {
+    public typealias Scalar = Double
+
+    @inlinable public static func cross(_ x: SIMD3<Scalar>, _ y: SIMD3<Scalar>) -> SIMD3<Scalar> {
+      simd.cross(x, y)
+    }
+
+    // MARK: - normalize
+    @inlinable public static func normalize(_ vector: SIMD2<Scalar>) -> SIMD2<Scalar> {
+      simd.normalize(vector)
+    }
+    
+    @inlinable public static func normalize(_ vector: SIMD3<Scalar>) -> SIMD3<Scalar> {
+      simd.normalize(vector)
+    }
+    
+    @inlinable public static func normalize(_ vector: SIMD4<Scalar>) -> SIMD4<Scalar> {
+      simd.normalize(vector)
+    }
+  }
+
   // MARK: - Matrices
   public typealias Matrix2x2 = double2x2
   public typealias Matrix3x2 = double3x2
   public typealias Matrix3x3 = double3x3
-
-  // MARK: - normalize
-  @inlinable public static func normalize(_ vector: SIMD2<Self>) -> SIMD2<Self> {
-    simd.normalize(vector)
-  }
-
-  @inlinable public static func normalize(_ vector: SIMD3<Self>) -> SIMD3<Self> {
-    simd.normalize(vector)
-  }
-
-  @inlinable public static func normalize(_ vector: SIMD4<Self>) -> SIMD4<Self> {
-    simd.normalize(vector)
-  }
-
-  // MARK: -
-  
-  @inlinable public static func cross(_ x: SIMD3<Self>, _ y: SIMD3<Self>) -> SIMD3<Self> {
-    simd.cross(x, y)
-  }
 }
 
 extension Double.Matrix2x2: Matrix2x2, @retroactive @unchecked Sendable {
