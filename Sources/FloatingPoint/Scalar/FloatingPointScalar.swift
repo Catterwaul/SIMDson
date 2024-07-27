@@ -12,6 +12,8 @@ public protocol FloatingPointScalar: SIMDScalar & BinaryFloatingPoint & Codable 
   /// by way of its `Scalar.VectorRequirements`.
   associatedtype VectorRequirements: FloatingPointVectorRequirements<Self>
 
+  associatedtype Quaternion: SIMDson.Quaternion
+
   // MARK: - Matrices
   associatedtype Matrix2x2: SIMDson.Matrix2x2<Self>
 
