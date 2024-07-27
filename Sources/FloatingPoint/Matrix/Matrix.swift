@@ -23,3 +23,11 @@ public protocol Matrix3: Matrix where
 {
   @inlinable init(_ column0: Column, _ column1: Column, _ column2: Column)
 }
+
+/// A matrix with 4 columns.
+public protocol Matrix4: Matrix where
+  Columns == (Column, Column, Column, Column),
+  Row == SIMD4<Scalar>
+{
+  @inlinable init(_ column0: Column, _ column1: Column, _ column2: Column, _ column3: Column)
+}

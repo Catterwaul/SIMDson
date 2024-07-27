@@ -1,5 +1,5 @@
 {
-  "originHash" : "1f439a845bc699ce4fdd151cefae29a5f39aa70bfcb1ed3335d453def085a6c3",
+  "originHash" : "03b9990bc674d0f1f59e8ec3dda15113b4434f40a6516abd6a5bbd664f108890",
   "pins" : [
     {
       "identity" : "swift-algorithms",
@@ -43,7 +43,7 @@
       "location" : "https://github.com/Catterwaul/Thrappture",
       "state" : {
         "branch" : "main",
-        "revision" : "9fd6fb84f6f60159219885776407b16a24c0e4a6"
+        "revision" : "9406628331a72335395e49b4a7029098aa163f97"
       }
     },
     {
@@ -52,7 +52,7 @@
       "location" : "https://github.com/Catterwaul/Tuplay",
       "state" : {
         "branch" : "main",
-        "revision" : "74c95c0a184d32bfee551408d2ae26a43f1269d2"
+        "revision" : "9193b1611664565788ffc3ae3a94c9b3db942563"
       }
     }
   ],

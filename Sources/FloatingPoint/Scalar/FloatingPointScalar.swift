@@ -19,6 +19,8 @@ public protocol FloatingPointScalar: SIMDScalar & BinaryFloatingPoint & Codable 
   associatedtype Matrix3x2: SIMDson.Matrix3x2<Self>
 
   associatedtype Matrix3x3: SIMDson.Matrix3x3<Self>
+
+  associatedtype Matrix4x4: SIMDson.Matrix4x4<Self>
 }
 
 public protocol FloatingPointVectorRequirements<Scalar> {

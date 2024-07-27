@@ -22,3 +22,5 @@ Matrix types names use the "**`C`**`x`**`R`**" suffix, with **C**olumn count com
 - ``Matrix3``
 - ``Matrix3x2``
 - ``Matrix3x3``
+- ``Matrix4``
+- ``Matrix4x4``
