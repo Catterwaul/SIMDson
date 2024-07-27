@@ -27,3 +27,17 @@ public extension SIMD where Scalar: SIMDScalar {
     }
   }
 }
+
+public extension SIMD where Scalar: SIMDScalar & ExpressibleByIntegerLiteral {
+  init(_ vector: SIMD2<Scalar>) {
+    self.init()
+    self[] = vector
+  }
+}
+
+public extension SIMD where Scalar: SIMDScalar & SignedNumeric {
+  static var up: Self { .init([0, 1] as SIMD2) }
+  static var down: Self { .init([0, -1] as SIMD2) }
+  static var left: Self { .init([-1, 0] as SIMD2) }
+  static var right: Self { .init([1, 0] as SIMD2) }
+}
