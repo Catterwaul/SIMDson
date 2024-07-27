@@ -7,7 +7,7 @@ let name = "SIMDson"
 
 _ = Package(
   name: name,
-  platforms: [.iOS(.v13), .macOS(.v10_15)],
+  platforms: [.iOS(.v16), .macOS(.v14)],
   products: [.library(name: name, targets: [name])],
   dependencies: dependencies.map(\.package),
   targets: [
