@@ -8,6 +8,17 @@ extension Double: FloatingPointScalar {
       simd.cross(x, y)
     }
 
+    // MARK: - magnitude
+    @inlinable public static func magnitude(_ vector: SIMD2<Scalar>) -> Scalar {
+      simd.length(vector)
+    }
+    @inlinable public static func magnitude(_ vector: SIMD3<Scalar>) -> Scalar {
+      simd.length(vector)
+    }
+    @inlinable public static func magnitude(_ vector: SIMD4<Scalar>) -> Scalar {
+      simd.length(vector)
+    }
+
     // MARK: - normalize
     @inlinable public static func normalize(_ vector: SIMD2<Scalar>) -> SIMD2<Scalar> {
       simd.normalize(vector)

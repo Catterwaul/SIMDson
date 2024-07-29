@@ -1,13 +1,19 @@
+// MARK: FloatingPointVector
 extension SIMD3: FloatingPointVector where Scalar: FloatingPointScalar {
   @inlinable public var normalized: Self { Scalar.VectorRequirements.normalize(self) }
 
-  @inlinable public static func cross(_ x: Self, _ y: Self) -> Self {
-    Scalar.VectorRequirements.cross(x, y)
+  @inlinable public var magnitude: Scalar {
+    get { Scalar.VectorRequirements.magnitude(self) }
+    set { self = normalized * newValue }
   }
 }
 
 // MARK: - public
 public extension SIMD3 where Self: FloatingPointVector {
+  @inlinable static func cross(_ x: Self, _ y: Self) -> Self {
+    Scalar.VectorRequirements.cross(x, y)
+  }
+
   /// Whether a vector points somewhere between two others.
   ///
   /// The vector that calls this method is projected into the 2D coordinate space

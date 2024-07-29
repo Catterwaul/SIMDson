@@ -38,4 +38,22 @@ struct VectorTests {
       #expect(!(Vector3.one).isBetween([0, 1, 0], and: [-1, 0, 0]))
     }
   }
+
+  @Test func magnitude() {
+    test(Float.self)
+    test(Double.self)
+
+    func test<Scalar: FloatingPointScalar>(_: Scalar.Type) {
+      test(SIMD2<Scalar>.self)
+      test(SIMD3<Scalar>.self)
+      test(SIMD4<Scalar>.self)
+
+      func test<Vector: FloatingPointVector>(_: Vector.Type) {
+        var vector = Vector.up * 2
+        #expect(vector.magnitude == 2)
+        vector.magnitude = 3
+        #expect(vector[1] == 3)
+      }
+    }
+  }
 }

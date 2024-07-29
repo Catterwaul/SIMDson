@@ -19,19 +19,25 @@ public protocol FloatingPointScalar: SIMDScalar & BinaryFloatingPoint & Codable 
 
   // A matrix with 3 columns and 2 rows.
   associatedtype Matrix3x2: SIMDson.Matrix3x2<Self>
-
   associatedtype Matrix3x3: SIMDson.Matrix3x3<Self>
-
   associatedtype Matrix4x4: SIMDson.Matrix4x4<Self>
+
+  // MARK: -
+//  @inlinable static func mix(_ x: SIMD3<Scalar>, _ y: SIMD3<Scalar>) -> SIMD3<Scalar>
 }
 
 public protocol FloatingPointVectorRequirements<Scalar> {
   associatedtype Scalar: FloatingPointScalar
 
-  @inlinable static func cross(_ x: SIMD3<Scalar>, _ y: SIMD3<Scalar>) -> SIMD3<Scalar>
+  @inlinable static func cross(_: SIMD3<Scalar>, _: SIMD3<Scalar>) -> SIMD3<Scalar>
+
+  // MARK: - magnitude
+  @inlinable static func magnitude(_: SIMD2<Scalar>) -> Scalar
+  @inlinable static func magnitude(_: SIMD3<Scalar>) -> Scalar
+  @inlinable static func magnitude(_: SIMD4<Scalar>) -> Scalar
 
   // MARK: - normalize
-  @inlinable static func normalize(_ vector: SIMD2<Scalar>) -> SIMD2<Scalar>
-  @inlinable static func normalize(_ vector: SIMD3<Scalar>) -> SIMD3<Scalar>
-  @inlinable static func normalize(_ vector: SIMD4<Scalar>) -> SIMD4<Scalar>
+  @inlinable static func normalize(_: SIMD2<Scalar>) -> SIMD2<Scalar>
+  @inlinable static func normalize(_: SIMD3<Scalar>) -> SIMD3<Scalar>
+  @inlinable static func normalize(_: SIMD4<Scalar>) -> SIMD4<Scalar>
 }

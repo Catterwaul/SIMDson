@@ -7,16 +7,25 @@ extension Float: FloatingPointScalar {
     @inlinable public static func cross(_ x: SIMD3<Scalar>, _ y: SIMD3<Scalar>) -> SIMD3<Scalar> {
       simd.cross(x, y)
     }
+    
+    // MARK: - magnitude
+    @inlinable public static func magnitude(_ vector: SIMD2<Scalar>) -> Scalar {
+      simd.length(vector)
+    }
+    @inlinable public static func magnitude(_ vector: SIMD3<Scalar>) -> Scalar {
+      simd.length(vector)
+    }
+    @inlinable public static func magnitude(_ vector: SIMD4<Scalar>) -> Scalar {
+      simd.length(vector)
+    }
 
     // MARK: - normalize
     @inlinable public static func normalize(_ vector: SIMD2<Scalar>) -> SIMD2<Scalar> {
       simd.normalize(vector)
     }
-
     @inlinable public static func normalize(_ vector: SIMD3<Scalar>) -> SIMD3<Scalar> {
       simd.normalize(vector)
     }
-
     @inlinable public static func normalize(_ vector: SIMD4<Scalar>) -> SIMD4<Scalar> {
       simd.normalize(vector)
     }
