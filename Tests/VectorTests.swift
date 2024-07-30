@@ -21,9 +21,6 @@ struct VectorTests {
   }
 
   @Test func isBetween() {
-    test(Float.self)
-    test(Double.self)
-
     func test<Scalar: FloatingPointScalar>(_: Scalar.Type) {
       typealias Vector2 = SIMD2<Scalar>
       #expect(Vector2.one.isBetween([1, 0], and: [0, 1]))
@@ -37,23 +34,60 @@ struct VectorTests {
       #expect(Vector3.one.isBetween([0, 1, 0], and: [1, 0, 0]))
       #expect(!(Vector3.one).isBetween([0, 1, 0], and: [-1, 0, 0]))
     }
+    // This crashes the compiler:
+    //    test(Self.allScalarTypes)
+    //    func test<each Scalar: FloatingPointScalar>(_: (repeat (each Scalar).Type)) {
+    //      repeat test((each Scalar).self)
+    //    }
+    test(Float.self)
+    test(Double.self)
   }
 
   @Test func magnitude() {
-    test(Float.self)
-    test(Double.self)
+    func test<Vector: FloatingPointVector>(_: Vector.Type) {
+      var vector = Vector.up * 2
+      #expect(vector.magnitude == 2)
+      vector.magnitude = 3
+      #expect(vector[1] == 3)
+    }
+    test(Self.allVectorTypes)
+    func test<each Vector: FloatingPointVector>(_: (repeat (each Vector).Type)) {
+      repeat test((each Vector).self)
+    }
+  }
 
-    func test<Scalar: FloatingPointScalar>(_: Scalar.Type) {
-      test(SIMD2<Scalar>.self)
-      test(SIMD3<Scalar>.self)
-      test(SIMD4<Scalar>.self)
+  @Test func normalized() {
+    func test<Vector: FloatingPointVector>(_: Vector.Type) {
+      let unnormalized = Vector.one
+      let normalized = unnormalized.normalized
+      test(wrapped: unnormalized, $projected: unnormalized)
 
-      func test<Vector: FloatingPointVector>(_: Vector.Type) {
-        var vector = Vector.up * 2
-        #expect(vector.magnitude == 2)
-        vector.magnitude = 3
-        #expect(vector[1] == 3)
+      func test(
+        @Normalized wrapped: Vector, // Using a default for `init(wrappedValue:)` crashes the compiler.
+        @Normalized projected: Vector // Using a default for `init(projectedValue:)` doesn't make sense, syntactically.
+      ) {
+        #expect(wrapped == unnormalized)
+        #expect($wrapped == normalized)
+        #expect(wrapped == normalized)
+
+        #expect(projected == normalized)
+        $projected = unnormalized
+        #expect(projected == normalized)
       }
     }
+    test(Self.allVectorTypes)
+    func test<each Vector: FloatingPointVector>(_: (repeat (each Vector).Type)) {
+      repeat test((each Vector).self)
+    }
+  }
+}
+
+private extension VectorTests {
+  static let allScalarTypes = (Float.self, Double.self)
+  static let allVectorTypes = flattened(map(allScalarTypes, transforms: allVectorTypes, allVectorTypes))
+
+  private static func allVectorTypes<Scalar: FloatingPointScalar>(_: Scalar.Type)
+  -> (SIMD2<Scalar>.Type, SIMD3<Scalar>.Type, SIMD4<Scalar>.Type) {
+    (SIMD2.self, SIMD3.self, SIMD4.self)
   }
 }

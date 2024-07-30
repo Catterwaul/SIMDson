@@ -1,5 +1,5 @@
 {
-  "originHash" : "03b9990bc674d0f1f59e8ec3dda15113b4434f40a6516abd6a5bbd664f108890",
+  "originHash" : "46d11644ec1696cded79edbb5b3ec8584b76e99bf2419c2f507ea04bcd2182b9",
   "pins" : [
     {
       "identity" : "swift-algorithms",
@@ -52,7 +52,7 @@
       "location" : "https://github.com/Catterwaul/Tuplay",
       "state" : {
         "branch" : "main",
-        "revision" : "9193b1611664565788ffc3ae3a94c9b3db942563"
+        "revision" : "424419c472c0887a3a58b3436d32f83c9fe15406"
       }
     }
   ],
