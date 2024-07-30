@@ -31,6 +31,11 @@ public protocol FloatingPointVectorRequirements<Scalar> {
 
   @inlinable static func cross(_: SIMD3<Scalar>, _: SIMD3<Scalar>) -> SIMD3<Scalar>
 
+  // MARK: - dot
+  @inlinable static func dot(_: SIMD2<Scalar>, _: SIMD2<Scalar>) -> Scalar
+  @inlinable static func dot(_: SIMD3<Scalar>, _: SIMD3<Scalar>) -> Scalar
+  @inlinable static func dot(_: SIMD4<Scalar>, _: SIMD4<Scalar>) -> Scalar
+
   // MARK: - magnitude
   @inlinable static func magnitude(_: SIMD2<Scalar>) -> Scalar
   @inlinable static func magnitude(_: SIMD3<Scalar>) -> Scalar

@@ -8,6 +8,17 @@ extension Float: FloatingPointScalar {
       simd.cross(x, y)
     }
     
+    // MARK: - dot
+    @inlinable public static func dot(_ vector0: SIMD2<Scalar>, _ vector1: SIMD2<Scalar>) -> Scalar {
+      simd.dot(vector0, vector1)
+    }
+    @inlinable public static func dot(_ vector0: SIMD3<Scalar>, _ vector1: SIMD3<Scalar>) -> Scalar {
+      simd.dot(vector0, vector1)
+    }
+    @inlinable public static func dot(_ vector0: SIMD4<Scalar>, _ vector1: SIMD4<Scalar>) -> Scalar {
+      simd.dot(vector0, vector1)
+    }
+
     // MARK: - magnitude
     @inlinable public static func magnitude(_ vector: SIMD2<Scalar>) -> Scalar {
       simd.length(vector)

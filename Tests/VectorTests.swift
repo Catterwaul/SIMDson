@@ -3,6 +3,16 @@ import Testing
 import Tuplé
 
 struct VectorTests {
+  @Test func dot() {
+    func test<Vector: FloatingPointVector>(_: Vector.Type) {
+      #expect(Vector.left • .right == -1)
+    }
+    test(Self.allVectorTypes)
+    func test<each Vector: FloatingPointVector>(_: (repeat (each Vector).Type)) {
+      repeat test((each Vector).self)
+    }
+  }
+
   @Test func `subscript`() {
     var double3 = SIMD3((10...12).map(Double.init))
     var double4 = SIMD4((1...4).map(Double.init))
