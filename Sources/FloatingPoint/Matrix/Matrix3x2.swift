@@ -5,6 +5,7 @@ public protocol Matrix3x2<Scalar>: Matrix3 where Column == SIMD2<Scalar> {
   @inlinable static func * (_: Self, _: Scalar.Matrix2x3) -> Scalar.Matrix2x2
   @inlinable static func * (_: Self, _: Scalar.Matrix3x3) -> Self
   @inlinable static func *= (_: inout Self, _: Scalar.Matrix3x3)
+  @inlinable static func * (_: Self, _: Scalar.Matrix4x3) -> Scalar.Matrix4x2
 }
 
 // MARK: - public

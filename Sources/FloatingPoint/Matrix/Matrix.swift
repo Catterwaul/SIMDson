@@ -22,8 +22,20 @@ public protocol Matrix<Scalar>: Sendable {
 }
 
 /// A matrix with the same number of columns and rows.
-public protocol SquareMatrix<Scalar>: Matrix where Row == Column {
-  @inlinable static func * (_: Self, _: Self) -> Self
+public protocol SquareMatrix<Scalar>: Matrix
+where
+  Row == Column,
+  Matrix2.Column == Row,
+  Matrix3.Column == Row,
+  Matrix4.Column == Row
+{
+  associatedtype Matrix2: SIMDson.Matrix2<Scalar>
+  associatedtype Matrix3: SIMDson.Matrix3<Scalar>
+  associatedtype Matrix4: SIMDson.Matrix4<Scalar>
+
+  @inlinable static func * (_: Self, _: Matrix2) -> Matrix2
+  @inlinable static func * (_: Self, _: Matrix3) -> Matrix3
+  @inlinable static func * (_: Self, _: Matrix4) -> Matrix4
   @inlinable static func *= (_: inout Self, _: Self)
 
   @inlinable var inverse: Self { get }

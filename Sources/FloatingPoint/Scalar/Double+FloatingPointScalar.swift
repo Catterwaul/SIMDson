@@ -89,6 +89,8 @@ extension Double.Quaternion: Quaternion {
 
 extension Double.Matrix2x2: Matrix2x2, @retroactive @unchecked Sendable {
   public typealias Scalar = Double
+  public typealias Matrix3 = Scalar.Matrix3x2
+  public typealias Matrix4 = Scalar.Matrix4x2
 }
 extension Double.Matrix2x3: Matrix2x3, @retroactive @unchecked Sendable {
   public typealias Scalar = Double
@@ -101,6 +103,8 @@ extension Double.Matrix3x2: Matrix3x2, @retroactive @unchecked Sendable {
 }
 extension Double.Matrix3x3: Matrix3x3, @retroactive @unchecked Sendable {
   public typealias Scalar = Double
+  public typealias Matrix2 = Scalar.Matrix2x3
+  public typealias Matrix4 = Scalar.Matrix4x3
 }
 extension Double.Matrix3x4: Matrix3x4, @retroactive @unchecked Sendable {
   public typealias Scalar = Double
@@ -113,4 +117,6 @@ extension Double.Matrix4x3: Matrix4x3, @retroactive @unchecked Sendable {
 }
 extension Double.Matrix4x4: Matrix4x4, @retroactive @unchecked Sendable {
   public typealias Scalar = Double
+  public typealias Matrix2 = Scalar.Matrix2x4
+  public typealias Matrix3 = Scalar.Matrix3x4
 }

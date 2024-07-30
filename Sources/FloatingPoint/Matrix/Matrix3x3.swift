@@ -1,8 +1,12 @@
 import Tuplé
 
-public protocol Matrix3x3<Scalar>: Matrix3 & SquareMatrix {
-  @inlinable static func * (_: Self, _: Scalar.Matrix2x3) -> Scalar.Matrix2x3
-
+public protocol Matrix3x3<Scalar>: Matrix3 & SquareMatrix
+where
+  Column == SIMD3<Scalar>,
+  Matrix2 == Scalar.Matrix2x3,
+  Matrix3 == Scalar.Matrix3x3,
+  Matrix4 == Scalar.Matrix4x3
+{
   init(_ quaternion: Scalar.Quaternion)
 }
 

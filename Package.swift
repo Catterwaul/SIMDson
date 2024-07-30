@@ -4,6 +4,9 @@ import Foundation // for String.capitalized
 import PackageDescription
 
 let name = "SIMDson"
+let swiftSettings: [SwiftSetting] = [
+  .unsafeFlags(["-Xfrontend", "-requirement-machine-max-rule-count=6000"])
+]
 
 _ = Package(
   name: name,
@@ -13,13 +16,13 @@ _ = Package(
   targets: [
     .target(
       name: name,
-      dependencies: dependencies.dropFirst().map(\.product)
+      dependencies: dependencies.dropFirst().map(\.product),
+      swiftSettings: swiftSettings
     ),
     .testTarget(
       name: name + ".Tests",
-      dependencies: [
-        .init(stringLiteral: name)
-      ]
+      dependencies: [.init(stringLiteral: name)],
+      swiftSettings: swiftSettings
     )
   ]
 )

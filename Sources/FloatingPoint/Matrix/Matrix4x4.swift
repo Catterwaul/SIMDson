@@ -1,8 +1,12 @@
 import Tuplé
 
-public protocol Matrix4x4<Scalar>: Matrix4 & SquareMatrix {
-  @inlinable static func * (_: Self, _: Scalar.Matrix2x4) -> Scalar.Matrix2x4
-}
+public protocol Matrix4x4<Scalar>: Matrix4 & SquareMatrix
+where
+  Column == SIMD4<Scalar>,
+  Matrix2 == Scalar.Matrix2x4,
+  Matrix3 == Scalar.Matrix3x4,
+  Matrix4 == Scalar.Matrix4x4
+{ }
 
 public extension Matrix4x4 {
   /// Change the precision of a matrix.
