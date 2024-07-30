@@ -66,6 +66,17 @@ struct VectorTests {
     }
   }
 
+  @Test func mix() {
+    func test<Vector: FloatingPointVector>(_: Vector.Type) {
+      #expect(.mix(.up, .down, mix: 0.5) == Vector.zero)
+      #expect(.mix(.up, .down, mix: .one / 2) == Vector.zero)
+    }
+    test(Self.allVectorTypes)
+    func test<each Vector: FloatingPointVector>(_: (repeat (each Vector).Type)) {
+      repeat test((each Vector).self)
+    }
+  }
+
   @Test func normalized() {
     func test<Vector: FloatingPointVector>(_: Vector.Type) {
       let unnormalized = Vector.one

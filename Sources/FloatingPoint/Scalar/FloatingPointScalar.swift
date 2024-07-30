@@ -41,6 +41,14 @@ public protocol FloatingPointVectorRequirements<Scalar> {
   @inlinable static func magnitude(_: SIMD3<Scalar>) -> Scalar
   @inlinable static func magnitude(_: SIMD4<Scalar>) -> Scalar
 
+  // MARK: - mix
+  @inlinable static func mix(_: SIMD2<Scalar>, _: SIMD2<Scalar>, mix: Scalar) -> SIMD2<Scalar>
+  @inlinable static func mix(_: SIMD2<Scalar>, _: SIMD2<Scalar>, mix: SIMD2<Scalar>) -> SIMD2<Scalar>
+  @inlinable static func mix(_: SIMD3<Scalar>, _: SIMD3<Scalar>, mix: Scalar) -> SIMD3<Scalar>
+  @inlinable static func mix(_: SIMD3<Scalar>, _: SIMD3<Scalar>, mix: SIMD3<Scalar>) -> SIMD3<Scalar>
+  @inlinable static func mix(_: SIMD4<Scalar>, _: SIMD4<Scalar>, mix: Scalar) -> SIMD4<Scalar>
+  @inlinable static func mix(_: SIMD4<Scalar>, _: SIMD4<Scalar>, mix: SIMD4<Scalar>) -> SIMD4<Scalar>
+
   // MARK: - normalize
   @inlinable static func normalize(_: SIMD2<Scalar>) -> SIMD2<Scalar>
   @inlinable static func normalize(_: SIMD3<Scalar>) -> SIMD3<Scalar>
