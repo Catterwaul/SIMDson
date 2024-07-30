@@ -41,3 +41,15 @@ public extension SIMD where Scalar: SIMDScalar & SignedNumeric {
   static var left: Self { .init([-1, 0] as SIMD2) }
   static var right: Self { .init([1, 0] as SIMD2) }
 }
+
+public extension SIMD4 {
+  /// A `SIMD4` created by appending two scalars to a `SIMD2`.
+  init(_ xy: SIMD2<Scalar>, _ z: Scalar, _ w: Scalar) {
+    self.init(xy.x, xy.y, z, w)
+  }
+
+  /// A `SIMD4` created by appending one `SIMD2` to another.
+  init(_ xy: SIMD2<Scalar>, _ zw: SIMD2<Scalar>) {
+    self.init(lowHalf: xy, highHalf: zw)
+  }
+}
