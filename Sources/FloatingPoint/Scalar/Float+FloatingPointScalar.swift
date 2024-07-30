@@ -75,6 +75,9 @@ extension Float: FloatingPointScalar {
   public typealias Matrix2x4 = float2x4
   public typealias Matrix3x2 = float3x2
   public typealias Matrix3x3 = float3x3
+  public typealias Matrix3x4 = float3x4
+  public typealias Matrix4x2 = float4x2
+  public typealias Matrix4x3 = float4x3
   public typealias Matrix4x4 = float4x4
 }
 
@@ -95,6 +98,15 @@ extension Float.Matrix3x2: Matrix3x2, @retroactive @unchecked Sendable {
   public typealias Scalar = Float
 }
 extension Float.Matrix3x3: Matrix3x3, @retroactive @unchecked Sendable {
+  public typealias Scalar = Float
+}
+extension Float.Matrix3x4: Matrix3x4, @retroactive @unchecked Sendable {
+  public typealias Scalar = Float
+}
+extension Float.Matrix4x2: Matrix4x2, @retroactive @unchecked Sendable {
+  public typealias Scalar = Float
+}
+extension Float.Matrix4x3: Matrix4x3, @retroactive @unchecked Sendable {
   public typealias Scalar = Float
 }
 extension Float.Matrix4x4: Matrix4x4, @retroactive @unchecked Sendable {
