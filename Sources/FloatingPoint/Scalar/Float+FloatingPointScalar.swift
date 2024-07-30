@@ -71,6 +71,8 @@ extension Float: FloatingPointScalar {
 
   // MARK: - Matrices
   public typealias Matrix2x2 = float2x2
+  public typealias Matrix2x3 = float2x3
+  public typealias Matrix2x4 = float2x4
   public typealias Matrix3x2 = float3x2
   public typealias Matrix3x3 = float3x3
   public typealias Matrix4x4 = float4x4
@@ -80,10 +82,16 @@ extension Float.Quaternion: Quaternion {
   public typealias Scalar = Float
 }
 
-extension Float.Matrix3x2: Matrix3x2, @retroactive @unchecked Sendable {
+extension Float.Matrix2x2: Matrix2x2, @retroactive @unchecked Sendable {
   public typealias Scalar = Float
 }
-extension Float.Matrix2x2: Matrix2x2, @retroactive @unchecked Sendable {
+extension Float.Matrix2x3: Matrix2x3, @retroactive @unchecked Sendable {
+  public typealias Scalar = Float
+}
+extension Float.Matrix2x4: Matrix2x4, @retroactive @unchecked Sendable {
+  public typealias Scalar = Float
+}
+extension Float.Matrix3x2: Matrix3x2, @retroactive @unchecked Sendable {
   public typealias Scalar = Float
 }
 extension Float.Matrix3x3: Matrix3x3, @retroactive @unchecked Sendable {

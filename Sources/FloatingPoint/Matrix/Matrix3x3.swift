@@ -1,6 +1,8 @@
 import Tuplé
 
 public protocol Matrix3x3<Scalar>: Matrix3 & SquareMatrix {
+  @inlinable static func * (_: Self, _: Scalar.Matrix2x3) -> Scalar.Matrix2x3
+
   init(_ quaternion: Scalar.Quaternion)
 }
 
