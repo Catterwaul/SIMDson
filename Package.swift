@@ -5,7 +5,7 @@ import PackageDescription
 
 let name = "SIMDson"
 let swiftSettings: [SwiftSetting] = [
-  .unsafeFlags(["-Xfrontend", "-requirement-machine-max-rule-count=6000"])
+  .unsafeFlags(["-Xfrontend", "-requirement-machine-max-rule-count=9000"])
 ]
 
 _ = Package(

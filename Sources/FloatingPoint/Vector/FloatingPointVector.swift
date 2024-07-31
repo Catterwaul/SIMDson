@@ -3,7 +3,7 @@
 infix operator •: MultiplicationPrecedence
 
 /// A "`SIMD`" with a scalar type that is used by matrices.
-public protocol FloatingPointVector: SIMD where Scalar: FloatingPointScalar {
+public protocol FloatingPointVector<Scalar>: SIMD where Scalar: FloatingPointScalar {
   /// The dot product.
   /// - Remark: shift-option-9 is the standard `·`, which is too small.
   /// This is option-8 instead.
