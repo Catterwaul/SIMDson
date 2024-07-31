@@ -1,10 +1,5 @@
 import Tuplé
 
-public protocol Matrix3x3<Scalar>: Matrix3 & SquareMatrix {
-  init(_ quaternion: Scalar.Quaternion)
-}
-
-// MARK: - public
 public extension Matrix3x3 {
   /// Change the precision of a matrix.
   @inlinable init(_ matrix: some Matrix3x3) {

@@ -1,7 +1,5 @@
 import Tuplé
 
-public protocol Matrix4x4<Scalar>: Matrix4 & SquareMatrix { }
-
 public extension Matrix4x4 {
   /// Change the precision of a matrix.
   @inlinable init(_ matrix: some Matrix4x4) {
