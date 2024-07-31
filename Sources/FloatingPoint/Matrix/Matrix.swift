@@ -17,7 +17,7 @@ public protocol Matrix<Scalar>: Sendable {
   /// - Bug: Should be expressible as `Column.Matrix2`
   associatedtype MultipliableMatrix4: SIMDson.Matrix4<Scalar>
 
-  @inlinable prefix static func - (_: Self) -> Self
+  @inlinable prefix static func -(_: Self) -> Self
   @inlinable static func * (_: Self, _: Row) -> Column
   @inlinable static func * (_: Self, _: Scalar) -> Self
   @inlinable static func *= (_: inout Self, _: Scalar)

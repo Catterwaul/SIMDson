@@ -1,6 +1,6 @@
 import Tuplé
 
-public protocol Matrix3x3<Scalar>: Matrix3 & SquareMatrix where Column == SIMD3<Scalar> {
+public protocol Matrix3x3<Scalar>: Matrix3 & SquareMatrix {
   init(_ quaternion: Scalar.Quaternion)
 }
 
