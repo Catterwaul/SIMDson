@@ -1,5 +1,12 @@
-// MARK:  FloatingPointVector
+// MARK: FloatingPointVector
 extension SIMD2: FloatingPointVector where Scalar: FloatingPointScalar {
+  /// A matrix with 2 columns of this vector.
+  public typealias Matrix2 = Scalar.Matrix2x2
+  /// A matrix with 3 columns of this vector.
+  public typealias Matrix3 = Scalar.Matrix3x2
+  /// A matrix with 4 columns of this vector.
+  public typealias Matrix4 = Scalar.Matrix4x2
+
   @inlinable public static func • (_ vector0: Self, _ vector1: Self) -> Scalar {
     Scalar.VectorRequirements.dot(vector0, vector1)
   }
