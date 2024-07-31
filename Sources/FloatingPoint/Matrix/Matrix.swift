@@ -40,7 +40,6 @@ where
   @inlinable static func * (_: Self, _: Matrix2) -> Matrix2
   @inlinable static func * (_: Self, _: Matrix3) -> Matrix3
   @inlinable static func * (_: Self, _: Matrix4) -> Matrix4
-  @inlinable static func *= (_: inout Self, _: Self)
 
   @inlinable var inverse: Self { get }
   @inlinable var determinant: Scalar { get }
@@ -48,15 +47,24 @@ where
 
 /// A matrix with 2 columns.
 public protocol Matrix2<Scalar>: Matrix where Columns == Vectuple2<Column>, Row == SIMD2<Scalar> {
+  @inlinable static func * (_: Self, _: Scalar.Matrix2x2) -> Self
+  @inlinable static func *= (_: inout Self, _: Scalar.Matrix2x2)
+
   @inlinable init(_ column0: Column, _ column1: Column)
 }
 
 /// A matrix with 3 columns.
 public protocol Matrix3<Scalar>: Matrix where Columns == Vectuple3<Column>, Row == SIMD3<Scalar> {
+  @inlinable static func * (_: Self, _: Scalar.Matrix3x3) -> Self
+  @inlinable static func *= (_: inout Self, _: Scalar.Matrix3x3)
+
   @inlinable init(_ column0: Column, _ column1: Column, _ column2: Column)
 }
 
 /// A matrix with 4 columns.
 public protocol Matrix4<Scalar>: Matrix where Columns == Vectuple4<Column>, Row == SIMD4<Scalar> {
+  @inlinable static func * (_: Self, _: Scalar.Matrix4x4) -> Self
+  @inlinable static func *= (_: inout Self, _: Scalar.Matrix4x4)
+  
   @inlinable init(_ column0: Column, _ column1: Column, _ column2: Column, _ column3: Column)
 }
