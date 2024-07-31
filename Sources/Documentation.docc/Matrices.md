@@ -18,9 +18,15 @@ Matrix types names use the "**`C`**`x`**`R`**" suffix, with **C**olumn count com
 
 - ``Matrix``
 - ``SquareMatrix``
+- ``Matrix2``
 - ``Matrix2x2``
+- ``Matrix2x3``
+- ``Matrix2x4``
 - ``Matrix3``
 - ``Matrix3x2``
 - ``Matrix3x3``
+- ``Matrix3x4``
 - ``Matrix4``
+- ``Matrix4x2``
+- ``Matrix4x3``
 - ``Matrix4x4``
