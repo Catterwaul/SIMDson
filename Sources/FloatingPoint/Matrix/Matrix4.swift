@@ -21,4 +21,7 @@ public protocol Matrix4x3<Scalar>: Matrix4 where Column == SIMD3<Scalar> {
 }
 
 /// A matrix with 4 columns and rows.
-public protocol Matrix4x4<Scalar>: Matrix4 & SquareMatrix { }
+public protocol Matrix4x4<Scalar>: Matrix4 & SquareMatrix {
+  @inlinable static func * (_: Self, _: Row.Matrix2) -> Column.Matrix2
+  @inlinable static func * (_: Self, _: Row.Matrix3) -> Column.Matrix3
+}

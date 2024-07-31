@@ -9,7 +9,10 @@ public protocol Matrix2<Scalar>: Matrix where Columns == Vectuple2<Column>, Row 
 }
 
 /// A matrix with 2 columns and rows.
-public protocol Matrix2x2<Scalar>: Matrix2 & SquareMatrix { }
+public protocol Matrix2x2<Scalar>: Matrix2 & SquareMatrix {
+  @inlinable static func * (_: Self, _: Row.Matrix3) -> Column.Matrix3
+  @inlinable static func * (_: Self, _: Row.Matrix4) -> Column.Matrix4
+}
 
 /// A matrix with 2 columns and 3 rows.
 public protocol Matrix2x3<Scalar>: Matrix2 where Column == SIMD3<Scalar> {

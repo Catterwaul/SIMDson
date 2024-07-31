@@ -16,7 +16,10 @@ public protocol Matrix3x2<Scalar>: Matrix3 where Column == SIMD2<Scalar> {
 
 /// A matrix with 3 columns and rows.
 public protocol Matrix3x3<Scalar>: Matrix3 & SquareMatrix {
-  init(_ quaternion: Scalar.Quaternion)
+  @inlinable static func * (_: Self, _: Row.Matrix2) -> Column.Matrix2
+  @inlinable static func * (_: Self, _: Row.Matrix4) -> Column.Matrix4
+
+  @inlinable init(_ quaternion: Scalar.Quaternion)
 }
 
 /// A matrix with 3 columns and 4 rows.
