@@ -1,7 +1,10 @@
 import Tuplé
 
 /// A matrix with 3 columns.
-public protocol Matrix3<Scalar>: Matrix where Columns == Vectuple3<Column>, Row == SIMD3<Scalar> {
+public protocol Matrix3<Scalar>: Matrix where
+  Columns == Vectuple3<Column>, Row == SIMD3<Scalar>,
+  Scalar.Matrix3x3: Matrix3x3<Scalar>
+{
   @inlinable static func * (_: Self, _: Row.Matrix3) -> Self
   @inlinable static func *= (_: inout Self, _: Row.Matrix3)
 

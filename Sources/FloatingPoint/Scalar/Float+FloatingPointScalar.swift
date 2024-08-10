@@ -88,9 +88,9 @@ extension Float.Quaternion: Quaternion {
 extension Float.Matrix2x2: Matrix2x2, @retroactive @unchecked Sendable {
   public typealias Scalar = Float
 }
-extension Float.Matrix2x3: Matrix2x3, @retroactive @unchecked Sendable {
-  public typealias Scalar = Float
-}
+//extension Float.Matrix2x3: Matrix2x3, @retroactive @unchecked Sendable {
+//  public typealias Scalar = Float
+//}
 extension Float.Matrix2x4: Matrix2x4, @retroactive @unchecked Sendable {
   public typealias Scalar = Float
 }
@@ -106,9 +106,9 @@ extension Float.Matrix3x4: Matrix3x4, @retroactive @unchecked Sendable {
 extension Float.Matrix4x2: Matrix4x2, @retroactive @unchecked Sendable {
   public typealias Scalar = Float
 }
-extension Float.Matrix4x3: Matrix4x3, @retroactive @unchecked Sendable {
-  public typealias Scalar = Float
-}
+//extension Float.Matrix4x3: Matrix4x3, @retroactive @unchecked Sendable {
+//  public typealias Scalar = Float
+//}
 extension Float.Matrix4x4: Matrix4x4, @retroactive @unchecked Sendable {
   public typealias Scalar = Float
 }

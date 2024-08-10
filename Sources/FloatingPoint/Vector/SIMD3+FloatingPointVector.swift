@@ -1,5 +1,8 @@
 // MARK: FloatingPointVector
-extension SIMD3: FloatingPointVector where Scalar: FloatingPointScalar {
+extension SIMD3: FloatingPointVector where
+  Scalar: FloatingPointScalar,
+  Scalar.Matrix3x3: Matrix3x3<Scalar>
+{
   /// A matrix with 2 columns of this vector.
   public typealias Matrix2 = Scalar.Matrix2x3
   /// A matrix with 3 columns of this vector.
@@ -38,7 +41,8 @@ public extension SIMD3 where Self: FloatingPointVector {
   /// The vector that calls this method is projected into the 2D coordinate space
   /// defined by the basis vectors `vector0` and `vector1`.
   /// The return value is whether the result is positive in both dimensions.
-  @inlinable func isBetween(_ vector0: Self, and vector1: Self) -> Bool {
+  @inlinable func isBetween(_ vector0: Self, and vector1: Self) -> Bool
+  where Scalar.Matrix3x2: Matrix3x2<Scalar> {
     let projectedTo2D = Scalar.Matrix3x2(Matrix3(vector0, vector1).inverse) * self
     return all(projectedTo2D .>= 0)
   }

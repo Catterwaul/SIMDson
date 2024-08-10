@@ -15,10 +15,10 @@ public protocol Matrix2x2<Scalar>: Matrix2 & SquareMatrix {
 }
 
 /// A matrix with 2 columns and 3 rows.
-public protocol Matrix2x3<Scalar>: Matrix2 where Column == SIMD3<Scalar> {
-  @inlinable static func * (_: Self, _: Row.Matrix3) -> Column.Matrix3
-  @inlinable static func * (_: Self, _: Row.Matrix4) -> Column.Matrix4
-}
+//public protocol Matrix2x3<Scalar>: Matrix2 where Column == SIMD3<Scalar> {
+//  @inlinable static func * (_: Self, _: Row.Matrix3) -> Column.Matrix3
+//  @inlinable static func * (_: Self, _: Row.Matrix4) -> Column.Matrix4
+//}
 
 /// A matrix with 2 columns and 4 rows.
 public protocol Matrix2x4<Scalar>: Matrix2 where Column == SIMD4<Scalar> {

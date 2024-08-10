@@ -30,7 +30,8 @@ extension SIMD2: FloatingPointVector where Scalar: FloatingPointScalar {
 // MARK: - public
 public extension SIMD2 where Self: FloatingPointVector {
   /// Whether a vector points somewhere between two others.
-  @inlinable func isBetween(_ vector0: Self, and vector1: Self) -> Bool {
+  @inlinable func isBetween(_ vector0: Self, and vector1: Self) -> Bool
+  where Matrix2: Matrix2x2<Scalar> {
     all(Matrix2(vector0, vector1).inverse * self .>= 0)
   }
 }
