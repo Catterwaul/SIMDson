@@ -41,3 +41,28 @@ public extension SIMD where Scalar: SIMDScalar & SignedNumeric {
   static var left: Self { .init([-1, 0] as SIMD2) }
   static var right: Self { .init([1, 0] as SIMD2) }
 }
+
+
+public extension SIMD2 {
+  /// A labeled `Vectuple2`.
+  typealias Tuple<Element> = (x: Element, y: Element)
+
+  /// A tuple of this vector's scalars.
+  @inlinable var tuple: Tuple<Scalar> { (x, y) }
+}
+
+public extension SIMD3 {
+  /// A labeled `Vectuple3`.
+  typealias Tuple<Element> = (x: Element, y: Element, z: Element)
+
+  /// A tuple of this vector's scalars.
+  @inlinable var tuple: (x: Scalar, y: Scalar, z: Scalar) { (x, y, z) }
+}
+
+public extension SIMD4 {
+  /// A labeled `Vectuple4`.
+  typealias Tuple<Element> = (x: Element, y: Element, z: Element, w: Element)
+
+  /// A tuple of this vector's scalars.
+  @inlinable var tuple: Tuple<Scalar> { (x, y, z, w) }
+}
