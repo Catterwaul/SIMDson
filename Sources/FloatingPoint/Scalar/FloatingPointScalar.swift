@@ -15,21 +15,21 @@ public protocol FloatingPointScalar: SIMDScalar & BinaryFloatingPoint & Codable 
   associatedtype Quaternion: SIMDson.Quaternion
 
   // MARK: - Matrices
-  associatedtype Matrix2x2: SIMDson.Matrix2x2<Self>
+  associatedtype Matrix2x2
   // A matrix with 2 columns and 3 rows.
-  associatedtype Matrix2x3: SIMDson.Matrix2x3<Self>
+  associatedtype Matrix2x3
   // A matrix with 2 columns and 4 rows.
-  associatedtype Matrix2x4: SIMDson.Matrix2x4<Self>
+  associatedtype Matrix2x4
   // A matrix with 3 columns and 2 rows.
-  associatedtype Matrix3x2: SIMDson.Matrix3x2<Self>
-  associatedtype Matrix3x3: SIMDson.Matrix3x3<Self>
+  associatedtype Matrix3x2
+  associatedtype Matrix3x3
   // A matrix with 3 columns and 4 rows.
-  associatedtype Matrix3x4: SIMDson.Matrix3x4<Self>
+  associatedtype Matrix3x4
   // A matrix with 4 columns and 2 rows.
-  associatedtype Matrix4x2: SIMDson.Matrix4x2<Self>
+  associatedtype Matrix4x2
   // A matrix with 4 columns and 3 rows.
-  associatedtype Matrix4x3: SIMDson.Matrix4x3<Self>
-  associatedtype Matrix4x4: SIMDson.Matrix4x4<Self>
+  associatedtype Matrix4x3
+  associatedtype Matrix4x4
 }
 
 public protocol FloatingPointVectorRequirements<Scalar> {
