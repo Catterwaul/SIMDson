@@ -1,4 +1,4 @@
-// swift-tools-version: 6.0
+// swift-tools-version: 6.2
 
 import Foundation // for String.capitalized
 import PackageDescription
@@ -10,7 +10,7 @@ let swiftSettings: [SwiftSetting] = [
 
 _ = Package(
   name: name,
-  platforms: [.iOS(.v16), .macOS(.v14)],
+  platforms: [.iOS(.v18), .macOS(.v26)],
   products: [.library(name: name, targets: [name])],
   dependencies: dependencies.map(\.package),
   targets: [

@@ -1,22 +1,58 @@
 {
-  "originHash" : "62c2f11c3e26b64c394c6ed03390b0f80634272ff5419ba9bf5fc22b267cd3f1",
+  "originHash" : "6d58a0a858e590568dceda255eecabf04a41db7f59b51b0c9e942e936e491391",
   "pins" : [
+    {
+      "identity" : "swift-algorithms",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/apple/swift-algorithms",
+      "state" : {
+        "branch" : "main",
+        "revision" : "0aa3733a77d162738267e54748f6f3fea7068b88"
+      }
+    },
     {
       "identity" : "swift-docc-plugin",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/apple/swift-docc-plugin",
+      "location" : "https://github.com/swiftlang/swift-docc-plugin",
       "state" : {
         "branch" : "main",
-        "revision" : "3aad4aabc42835f09f600bb17070f6a11bc84180"
+        "revision" : "7935a77059e00713a088edf37e2a3485f87398ad"
       }
     },
     {
       "identity" : "swift-docc-symbolkit",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/apple/swift-docc-symbolkit",
+      "location" : "https://github.com/swiftlang/swift-docc-symbolkit",
       "state" : {
         "revision" : "b45d1f2ed151d057b54504d653e0da5552844e34",
         "version" : "1.0.0"
+      }
+    },
+    {
+      "identity" : "swift-numerics",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/apple/swift-numerics.git",
+      "state" : {
+        "revision" : "0c0290ff6b24942dadb83a929ffaaa1481df04a2",
+        "version" : "1.1.1"
+      }
+    },
+    {
+      "identity" : "thrappture",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Catterwaul/Thrappture",
+      "state" : {
+        "branch" : "main",
+        "revision" : "d930cd6928b2bbf3029e877c107950b2c91db811"
+      }
+    },
+    {
+      "identity" : "tuplay",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Catterwaul/Tuplay",
+      "state" : {
+        "branch" : "main",
+        "revision" : "3a13af6e832f0a739e7a0eea4b8422a58303e17c"
       }
     }
   ],
